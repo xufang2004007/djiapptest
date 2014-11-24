@@ -1,0 +1,25 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion '21.0.1'
+
+    defaultConfig {
+        applicationId "dji.sdk"
+        minSdkVersion 14
+        targetSdkVersion 17
+    }
+
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile files('libs/bouncycastle.jar')
+    compile files('libs/dji-core.jar')
+    compile files('libs/dji-sdk.jar')
+}
